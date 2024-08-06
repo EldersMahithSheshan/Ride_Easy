@@ -132,7 +132,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Or Create My Account',
+                child: const Text('Or Create New Account',
                     style: TextStyle(color: Colors.grey)),
               ),
             ],
