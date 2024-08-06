@@ -1,6 +1,10 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:ride_easy/features/BusShedule/busshedule.dart';
 import 'package:ride_easy/features/BusTracking/bustracking.dart';
+import 'package:ride_easy/features/FeedbackPage/feedbackpage.dart';
+import 'package:ride_easy/features/SupportPage/faqpage.dart';
+import 'package:ride_easy/features/TicketBooking/ticketbooking.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -80,7 +84,7 @@ class HomePage extends StatelessWidget {
                     context: context,
                     title: 'Ticket Booking',
                     image: const AssetImage('assets/images/ticket.png'),
-                    targetPage: const BusSchedulePage(),
+                    targetPage: const TicketBookingPage(),
                   ),
                   _buildButton(
                     context: context,
@@ -92,13 +96,13 @@ class HomePage extends StatelessWidget {
                     context: context,
                     title: 'Support',
                     image: const AssetImage('assets/images/support.png'),
-                    targetPage: const BusSchedulePage(),
+                    targetPage: const FAQPage(),
                   ),
                   _buildButton(
                     context: context,
-                    title: 'Games',
-                    image: const AssetImage('assets/images/games.png'),
-                    targetPage: const BusSchedulePage(),
+                    title: 'FeedBack',
+                    image: const AssetImage('assets/images/feedback.png'),
+                    targetPage: const FeedbackPage(),
                   ),
                 ],
               ),
@@ -108,7 +112,42 @@ class HomePage extends StatelessWidget {
               width: 80,
               height: 80,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  AwesomeDialog(
+                    context: context,
+                    dialogType: DialogType.warning,
+                    animType: AnimType.topSlide,
+                    customHeader: const Icon(
+                      Icons.warning,
+                      size: 50,
+                      color: Colors.orange,
+                    ),
+                    title: 'Don\'t Panic',
+                    desc: 'Are you sure you want to call emergency contact?',
+                    btnCancel: ElevatedButton(
+                      onPressed: () {
+                        // Call emergency contact
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.red,
+                        textStyle: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      child: const Text('SOS'),
+                    ),
+                    btnOkOnPress: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
+                    },
+                  ).show();
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
                   shape: const CircleBorder(),
