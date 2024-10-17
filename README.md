@@ -36,7 +36,9 @@ Your safety is our priority. In case of emergencies, an SOS button is available 
 ---
 
 ## 📲 **Screenshots**
-*Screenshots of the app will be added soon! Stay tuned for visual highlights of the user interface and app experience.*
+![HOME PAGE](https://github.com/user-attachments/assets/f59c34fa-4f9a-4c20-8b9b-31b1fdb140a1)
+![Bus Shedule Checking](https://github.com/user-attachments/assets/c2071de8-a65e-45c6-aed7-0e0ecf1b0b73)
+![WELCOME](https://github.com/user-attachments/assets/91a56f9d-4144-4c60-895d-a0234ca52c97)
 
 ---
 
